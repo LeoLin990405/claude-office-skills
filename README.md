@@ -1,23 +1,24 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Claude%20Code-Skill-blue?style=for-the-badge" alt="Claude Code Skill">
   <img src="https://img.shields.io/badge/Skills-5-green?style=for-the-badge" alt="Skills">
-  <img src="https://img.shields.io/badge/Office-Documents-217346?style=for-the-badge" alt="Office">
+  <img src="https://img.shields.io/badge/Workflows-3-purple?style=for-the-badge" alt="Workflows">
+  <img src="https://img.shields.io/badge/Templates-3-orange?style=for-the-badge" alt="Templates">
+  <img src="https://img.shields.io/badge/Document-Toolkit-217346?style=for-the-badge" alt="Document Toolkit">
 </p>
 
-<h1 align="center">Claude Office Skills</h1>
+<h1 align="center">Document Toolkit</h1>
 
 <p align="center">
-  <strong>Office Document Processing Toolkit for Claude Code</strong>
+  <strong>Complete Document Processing Toolkit for Claude Code</strong>
   <br>
-  <em>PDF, Word, PowerPoint, Excel manipulation and document co-authoring workflows</em>
+  <em>5 format skills, 3 cross-format workflows, 3 ready-to-use templates — covering PDF, Word, Excel, and PowerPoint</em>
 </p>
 
 <p align="center">
-  <a href="#-features">Features</a> •
-  <a href="#-quick-start">Quick Start</a> •
   <a href="#-skills">Skills</a> •
-  <a href="#-usage">Usage</a> •
-  <a href="#-capabilities">Capabilities</a>
+  <a href="#-workflows">Workflows</a> •
+  <a href="#-templates">Templates</a> •
+  <a href="#-quick-start">Quick Start</a>
 </p>
 
 <p align="center">
@@ -35,28 +36,52 @@
 
 ## Overview
 
-**Claude Office Skills** provides comprehensive document processing capabilities, enabling Claude Code to create, edit, and analyze Office documents programmatically.
+**Document Toolkit** is a complete document processing toolkit organized by format and workflow. It provides 5 format-specific skills for creating, editing, and analyzing Office documents, plus cross-format workflows and ready-to-use templates.
 
-### Why Office Skills?
+### What Changed (v2.0)
 
-| Challenge | Solution |
-|-----------|----------|
-| Manual document creation | **Programmatic generation** of Office files |
-| PDF form filling | **Automated PDF** manipulation |
-| Spreadsheet analysis | **Excel formulas** and data processing |
-| Presentation building | **PowerPoint** slide generation |
+| Before (v1) | After (v2) |
+|-------------|------------|
+| 5 standalone skills | **5 skills + routing layer** |
+| No templates | **3 ready-to-use document templates** |
+| Single-format focus | **3 cross-format workflows** |
+| Flat skill list | **Intent-based routing with quick actions** |
 
 ---
 
-## Features
+## Skills
 
-| Feature | Description |
-|---------|-------------|
-| **PDF** | Extract, create, merge, split, fill forms |
-| **Word** | Create, edit, format with styles |
-| **Excel** | Formulas, pivot tables, charts |
-| **PowerPoint** | Slides, layouts, animations |
-| **Co-authoring** | Collaborative document workflows |
+| Skill | Command | Description |
+|-------|---------|-------------|
+| `pdf` | `/pdf` | PDF manipulation — extract, create, merge, split, fill forms |
+| `docx` | `/docx` | Word document processing — create, edit, format, styles |
+| `xlsx` | `/xlsx` | Excel spreadsheets — formulas, charts, pivot tables, data validation |
+| `pptx` | `/pptx` | PowerPoint presentations — slides, layouts, charts, animations |
+| `doc-coauthoring` | `/doc-coauthoring` | Collaborative document editing and review workflows |
+
+---
+
+## Workflows
+
+Cross-format workflow guides for multi-step document tasks:
+
+| Workflow | Pipeline | Guide |
+|----------|----------|-------|
+| **Data to Presentation** | xlsx analysis → pptx slides | [data-to-presentation](workflows/data-to-presentation.md) |
+| **Document Review Cycle** | docx draft → review → redline → final | [document-review-cycle](workflows/document-review-cycle.md) |
+| **PDF Form Processing** | PDF form extraction → data processing → output | [pdf-form-processing](workflows/pdf-form-processing.md) |
+
+---
+
+## Templates
+
+Ready-to-use document structure templates:
+
+| Template | Use Case |
+|----------|----------|
+| [report-structure](templates/report-structure.md) | Business report (exec summary, analysis, recommendations, appendix) |
+| [proposal-structure](templates/proposal-structure.md) | Business proposal (problem, solution, pricing, timeline) |
+| [meeting-notes](templates/meeting-notes.md) | Meeting notes (attendees, agenda, discussion, decisions, actions) |
 
 ---
 
@@ -75,78 +100,22 @@ git clone https://github.com/LeoLin990405/claude-office-skills.git
 ls ~/.claude/skills/claude-office-skills/SKILL.md
 ```
 
----
-
-## Skills
-
-| Skill | Command | Description |
-|-------|---------|-------------|
-| `pdf` | `/pdf` | PDF manipulation toolkit |
-| `docx` | `/docx` | Word document processing |
-| `pptx` | `/pptx` | PowerPoint presentations |
-| `xlsx` | `/xlsx` | Excel spreadsheets |
-| `doc-coauthoring` | `/doc-coauthoring` | Document co-authoring workflow |
-
----
-
-## Capabilities
-
-### PDF
-
-| Operation | Description |
-|-----------|-------------|
-| Extract | Text, tables, images from PDF |
-| Create | Generate new PDF documents |
-| Merge | Combine multiple PDFs |
-| Split | Separate PDF pages |
-| Forms | Fill PDF form fields |
-
-### Word (DOCX)
-
-| Operation | Description |
-|-----------|-------------|
-| Create | New documents with formatting |
-| Edit | Modify existing documents |
-| Styles | Apply heading, paragraph styles |
-| Tables | Insert and format tables |
-| Images | Add images and captions |
-
-### Excel (XLSX)
-
-| Operation | Description |
-|-----------|-------------|
-| Formulas | SUM, VLOOKUP, complex formulas |
-| Charts | Bar, line, pie charts |
-| Pivot | Pivot tables and analysis |
-| Format | Conditional formatting |
-| Data | Validation and filtering |
-
-### PowerPoint (PPTX)
-
-| Operation | Description |
-|-----------|-------------|
-| Slides | Create and edit slides |
-| Layouts | Apply slide layouts |
-| Charts | Insert data visualizations |
-| Animations | Add transitions and effects |
-| Notes | Speaker notes |
-
----
-
-## Usage
+### Usage
 
 ```bash
-# Work with PDF files
-/pdf
+# The toolkit auto-routes based on your request:
+"Create a business report"           → docx + report-structure template
+"Write a proposal"                   → docx + proposal-structure template
+"Merge these PDFs"                   → pdf skill
+"Build slides from this data"        → data-to-presentation workflow
+"Review and redline this doc"        → document-review-cycle workflow
 
-# Create or edit spreadsheets
-/xlsx
-
-# Build presentations
-/pptx
-
-# Collaborative document workflow
-/doc-coauthoring
+# Or access skills directly:
+/pdf                                 → PDF manipulation
+/docx                                → Word documents
+/xlsx                                → Excel spreadsheets
+/pptx                                → PowerPoint presentations
+/doc-coauthoring                     → Collaborative editing
 ```
 
 ---
@@ -155,26 +124,33 @@ ls ~/.claude/skills/claude-office-skills/SKILL.md
 
 ### 概述
 
-**Claude Office Skills** 提供全面的文档处理能力，使 Claude Code 能够以编程方式创建、编辑和分析 Office 文档。
+**Document Toolkit** 是一个完整的文档处理工具集，按格式和工作流组织。提供 5 个格式专用技能、3 个跨格式工作流和 3 个即用模板。
 
-### 包含的技能
+### 技能
 
 | 技能 | 命令 | 描述 |
 |------|------|------|
-| `pdf` | `/pdf` | PDF 操作工具包 |
-| `docx` | `/docx` | Word 文档处理 |
-| `pptx` | `/pptx` | PowerPoint 演示文稿 |
-| `xlsx` | `/xlsx` | Excel 电子表格 |
-| `doc-coauthoring` | `/doc-coauthoring` | 文档协作工作流 |
+| `pdf` | `/pdf` | PDF 操作 — 提取、创建、合并、拆分、填写表单 |
+| `docx` | `/docx` | Word 文档处理 — 创建、编辑、格式、样式 |
+| `xlsx` | `/xlsx` | Excel 电子表格 — 公式、图表、数据透视表、数据验证 |
+| `pptx` | `/pptx` | PowerPoint 演示文稿 — 幻灯片、布局、图表、动画 |
+| `doc-coauthoring` | `/doc-coauthoring` | 协作文档编辑和审阅工作流 |
 
-### 功能特性
+### 工作流
 
-| 格式 | 功能 |
+| 工作流 | 流程 | 指南 |
+|--------|------|------|
+| **数据到演示** | xlsx 分析 → pptx 幻灯片 | [data-to-presentation](workflows/data-to-presentation.md) |
+| **文档审阅周期** | docx 草稿 → 审阅 → 红线标注 → 定稿 | [document-review-cycle](workflows/document-review-cycle.md) |
+| **PDF 表单处理** | PDF 表单提取 → 数据处理 → 输出 | [pdf-form-processing](workflows/pdf-form-processing.md) |
+
+### 模板
+
+| 模板 | 用途 |
 |------|------|
-| **PDF** | 提取文本/表格、创建、合并、拆分、填写表单 |
-| **Word** | 创建带格式、表格、图片的文档 |
-| **Excel** | 公式、数据透视表、图表、数据验证 |
-| **PowerPoint** | 幻灯片、布局、图表、动画 |
+| [report-structure](templates/report-structure.md) | 商业报告（摘要、分析、建议、附录） |
+| [proposal-structure](templates/proposal-structure.md) | 商业提案（问题、方案、定价、时间线） |
+| [meeting-notes](templates/meeting-notes.md) | 会议记录（参会人、议程、讨论、决定、行动项） |
 
 ### 安装
 
@@ -183,28 +159,12 @@ cd ~/.claude/skills
 git clone https://github.com/LeoLin990405/claude-office-skills.git
 ```
 
-### 使用方法
-
-```bash
-# 处理 PDF 文件
-/pdf
-
-# 创建或编辑电子表格
-/xlsx
-
-# 构建演示文稿
-/pptx
-
-# 协作文档工作流
-/doc-coauthoring
-```
-
 ---
 
 ## Contributors
 
 - **Leo** ([@LeoLin990405](https://github.com/LeoLin990405)) - Project Lead
-- **Claude** (Anthropic Claude Opus 4.5) - Content Generation
+- **Claude** (Anthropic Claude Opus 4.6) - Content Generation
 
 ## License
 
