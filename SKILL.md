@@ -1,20 +1,21 @@
 ---
 name: claude-office-skills
-description: Office document processing toolkit
-version: 1.0.0
+description: Archived. The active document-processing skills now live in claude-code-skills under documents/
+version: 1.0.1
 ---
 
-# Claude Office Skills
+# Archived: Claude Office Skills moved
 
-Office document processing toolkit for Claude Code.
+This repository is archived as a source repo.
 
-## Skills Index
+Use the active monorepo instead:
+- `https://github.com/LeoLin990405/claude-code-skills`
 
-### Document Processing
-- [pdf](skills/pdf/SKILL.md) - PDF manipulation toolkit
-- [docx](skills/docx/SKILL.md) - Word document processing
-- [pptx](skills/pptx/SKILL.md) - PowerPoint presentations
-- [xlsx](skills/xlsx/SKILL.md) - Excel spreadsheets
+Use these destination paths:
+- `documents/pdf`
+- `documents/docx`
+- `documents/pptx`
+- `documents/xlsx`
+- `documents/doc-coauthoring`
 
-### Workflows
-- [doc-coauthoring](skills/doc-coauthoring/SKILL.md) - Document co-authoring workflow
+Do not add new content to this archived source repo.
