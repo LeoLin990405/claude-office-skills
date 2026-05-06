@@ -1,20 +1,17 @@
-# Office Document Skills
+# Archived Source Repository
 
-This repository is public and unarchived. It is kept as a maintenance mirror and migration reference for these document-processing skills.
+This repository is no longer the canonical home for the document / office skills.
 
-The active canonical destination is:
-- https://github.com/LeoLin990405/claude-code-skills
+Canonical location:
 
-The migrated skill packs live under:
-- https://github.com/LeoLin990405/claude-code-skills/tree/main/documents
+- `LeoLin990405/claude-code-skills`
+- `documents/*`
 
-Direct mappings:
-- `claude-office-skills/skills/pdf` -> `claude-code-skills/documents/pdf`
-- `claude-office-skills/skills/docx` -> `claude-code-skills/documents/docx`
-- `claude-office-skills/skills/pptx` -> `claude-code-skills/documents/pptx`
-- `claude-office-skills/skills/xlsx` -> `claude-code-skills/documents/xlsx`
-- `claude-office-skills/skills/doc-coauthoring` -> `claude-code-skills/documents/doc-coauthoring`
+What changed:
 
-## Maintenance
+- the active PDF, DOCX, PPTX, XLSX, MinerU, and document workflow skills live in `claude-code-skills`
+- this standalone repository is kept only as a historical source and redirect pointer
 
-Use `claude-code-skills` for new features, document workflow updates, and installation flow changes. This repository remains available for historical source context, issue triage, and small compatibility fixes when needed.
+Use or update the skills here:
+
+- <https://github.com/LeoLin990405/claude-code-skills/tree/main/documents>
